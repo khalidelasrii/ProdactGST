@@ -1,0 +1,27 @@
+/* style.css */
+
+/* Supprime les puces de la liste */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Style des liens de la barre de navigation */
+li {
+    display: inline; /* Affiche les éléments de liste horizontalement */
+    margin-right: 20px; /* Espace entre les éléments */
+}
+
+/* Style des liens */
+a {
+    box-shadow: #007BFF;
+    text-decoration: none; /* Supprime la décoration par défaut des liens */
+    color: #370; /* Couleur du texte */
+    font-weight: bold; /* Gras */
+}
+
+/* Style des liens au survol de la souris */
+a:hover {
+    color: #007BFF; /* Couleur différente au survol */
+}
