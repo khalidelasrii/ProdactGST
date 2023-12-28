@@ -12,31 +12,27 @@
             padding: 0;
             list-style: none;
         }
-
-        nav {
+        header {
             height: 80px;
-            width: 100%;
             background-color: brown;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
-
-        nav label {
+        header label {
             color: white;
+        }
+        header ul {
+            display: flex;
+            align-items: center;
+        }
+
+        header ul li {
             line-height: 80px;
-            padding: 20px;
+            align-items: center;
         }
 
-        nav ul {
-            float: right;
-            margin-right: 30px;
-
-        }
-
-        nav ul li {
-            display: inline-block;
-            line-height: 80px
-        }
-
-        nav ul li a {
+        header ul li a {
             color: aliceblue;
             margin: 20px;
 
@@ -72,8 +68,12 @@
 <body>
 
     <!-- la navbar de ducument  -->
-    <nav>
+    <header>
         <label for="">khalid</label>
+
+
+
+
         <ul>
             <li>
                 <a href="">Home</a>
@@ -90,11 +90,13 @@
             <li>
                 <a href="">Home</a>
             </li>
-            <li>
-                <a href="">Home</a>
-            </li>
+
         </ul>
-    </nav>
+
+
+
+        <button>salam</button>
+    </header>
     <!-- la partie de body -->
 
     <h1>
