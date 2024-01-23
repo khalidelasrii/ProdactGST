@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +8,105 @@
     <title>Sing In</title>
     <link rel="stylesheet" href="css/bootstrap-grid.min.css">
     <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="style_singinpage.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .contain{
+            padding: 5%;
+        }
+        .ferst{
+            padding: 0;
+            background-color:        #adb5bd
+;
+            border-top-left-radius: 60px;
+            border-bottom-left-radius:  60px;
+        }
+        .ferst-child{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #0d6efd;
+            height: 500px;
+            border-top-right-radius: 60px;
+            border-top-left-radius: 60px;
+            border-bottom-left-radius:  60px;
+        }
+        .second{
+            padding: 0;
+            background-color: #0d6efd;
+            border-top-right-radius: 60px;
+            border-bottom-right-radius:  60px;
+           
+        }
+        .second-child{
+
+            height: 500px;
+            background-color:        #adb5bd;
+            border-bottom-left-radius: 60px;
+            border-top-right-radius: 60px;
+            border-bottom-right-radius:  60px;
+            display: flex;
+            justify-content: center;
+            align-items:center;
+        }
+        .body-image{
+            height: 300px;
+        }
+        .container-form{
+            width: 100%;
+            padding: 5%;
+            
+        }
+        .botton_from{
+text-align: center;            
+        }
+        .btn-child{
+            width: 80%;
+        }
+
+
+    </style>
+
 </head>
+
 <body>
-    
+
+
+        <div class="contain row">
+            <div class="ferst col-4">
+                <div class="ferst-child">
+
+                    <img class="body-image" src="assets/boy.png" alt="boy-image">
+                </div>
+
+            </div>
+            <div class="second col-8">
+                <div class="second-child">
+
+                    <form class="container-form">
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Email address</label>
+                          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputPassword1">Password</label>
+                          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        </div>
+                        <div class="form-check">
+                          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                        </div>
+                        <div class="botton_from">                        <button type="submit" class=" btn-child btn btn-primary">Submit</button>
+                        </div>
+                      </form>
+
+
+                </div>
+            </div>
+        </div>
+
 </body>
 </html>
