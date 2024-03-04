@@ -1,0 +1,26 @@
+*{
+
+    margin: 0;
+    padding: 0;
+
+}
+
+.navBar{
+    margin: 20px;
+
+    display: flex;
+    justify-content: space-between;
+    
+}
+.navBar ul {
+    display: inline-flex;
+    list-style: none;
+}
+.navBar ul li {
+    margin: 15px;
+
+}
+.navBar div button{
+    margin:15px;
+    display: inline;
+}
