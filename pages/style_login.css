@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+.myImageBck{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+.container{
+    position:absolute;
+    width: 100%;
+    height: 100%;
+}
+.container .navBar{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    height: 6%;
+    line-height: 80px;
+   
+
+}
+.container .navBar a{
+    padding-left: 30px;
+
+    font-weight: bolder;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+
+    
+
+}
+
+.container .navBar a:last-child{
+
+    margin-right: 30px;
+
+}
+
+.container .navBar a:hover {
+    color: rebeccapurple;
+
+  }
+.container .navBar li{
+    display: inline-flex;
+    padding-left: 30px;
+    
+
+}
+
+
+
+
+.container_child {
+    height: 94% ;
+    justify-content: center;
+    display: flex;
+    align-items: center; /* Optional: to vertically center the content */
+}
+
+.card-decoration {
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    background-color: transparent;
+    border: 2px solid gainsboro;
+    margin: 20px    ;
+    padding: 60px;
+    
+    /* overflow: hidden; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   width: 400px;
+   min-height: 400px;
+ 
+}
+.form-box-login{
+    text-align: center;
+    margin: 20px;
+    position: absolute;
+    transform: translateX(-400px);    
+}
+
+.form-box-register{
+    margin: 20px;
+
+    text-align: center;
+    position: absolute;
+    transform: translateX(400px);
+
+}
+.card-decoration h1{
+    font-weight: bolder;
+    font-family:Impact  ;
+    font-size: 50px;
+}
+.icon-close{
+    position: absolute;
+    background-color: rgb(85, 24, 42);
+    top: 0;
+    right:0;
+    height: 40px;
+    width: 40px;
+    display: flex;
+justify-content: center;  
+  align-items: center;
+  border-bottom-left-radius: 20px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  }
+
+
+.card-decoration input {
+    padding-left: 15px;
+    padding-right: 15px;
+    color: white ;
+    width: 400px;
+    height: 50px;
+    border: none;
+    background-color: transparent;
+    border-bottom: 2px solid gainsboro;
+    font-size: 20px;
+
+}
+
+
+.card-decoration input:focus {
+    outline: none;
+    background-color: rgb(52, 150, 189);
+    font-size: 20px;
+    border-radius: 15px;
+
+}
+
+.card-decoration .connexion{
+    font-size: 20px;
+    margin-top: 50px;
+    width: 80%;
+    height: 50px;
+    border-radius: 15px;
+    background-color: rgb(13, 116, 110);
+    color: gainsboro;
+    border: 2px solid  gainsboro;
+}
+
+.card-decoration input::-webkit-input-placeholder { 
+    color: wheat;
+    line-height: 50px;
+
+  }
+
+::-moz-placeholder { /* Firefox 19+ */
+    color: wheat;
+  }
+  :-ms-input-placeholder { /* IE 10+ */
+    color: wheat;
+  }
+  :-moz-placeholder { /* Firefox 18- */
+    color: wheat;
+  }
+
