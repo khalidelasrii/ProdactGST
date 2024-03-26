@@ -9,26 +9,29 @@ body {
     height: 100%;
 }
 
-.myImageBck{
+.myImageBck {
     height: 100%;
     width: 100%;
     position: absolute;
 }
-.container{
-    position:absolute;
+
+.container {
+    position: absolute;
     width: 100%;
     height: 100%;
 }
-.container .navBar{
+
+.container .navBar {
     list-style: none;
     display: flex;
     justify-content: space-between;
     height: 6%;
     line-height: 80px;
-   
+
 
 }
-.container .navBar a{
+
+.container .navBar a {
     padding-left: 30px;
 
     font-weight: bolder;
@@ -36,24 +39,39 @@ body {
     color: white;
     text-decoration: none;
 
-    
+
+
+}
+.container .navBar button {
+    margin:  30px;
+    background-color: transparent;
+    padding: 10px 40px;
+    font-weight: bolder;
+    font-size: 20px;
+    color: white;
+    border-radius: 5px;
+    border-color: gainsboro;
+
+}
+.container .navBar button:hover {
+background-color: blue;
+
 
 }
 
-.container .navBar a:last-child{
 
-    margin-right: 30px;
 
-}
 
 .container .navBar a:hover {
-    color: rebeccapurple;
+    color: blue;
 
-  }
-.container .navBar li{
+
+}
+
+.container .navBar li {
     display: inline-flex;
     padding-left: 30px;
-    
+
 
 }
 
@@ -61,10 +79,10 @@ body {
 
 
 .container_child {
-    height: 94% ;
+    height: 94%;
     justify-content: center;
     display: flex;
-    align-items: center; /* Optional: to vertically center the content */
+    align-items: center;
 }
 
 .card-decoration {
@@ -72,25 +90,26 @@ body {
     border-radius: 20px;
     background-color: transparent;
     border: 2px solid gainsboro;
-    margin: 20px    ;
+    margin: 20px;
     padding: 60px;
-    
-    /* overflow: hidden; */
+
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-   width: 400px;
-   min-height: 400px;
- 
+    width: 400px;
+    min-height: 400px;
+
 }
-.form-box-login{
+
+.form-box-login {
     text-align: center;
     margin: 20px;
     position: absolute;
-    transform: translateX(-400px);    
+    /* transform: translateX(-400px);     */
 }
 
-.form-box-register{
+.form-box-register {
     margin: 20px;
 
     text-align: center;
@@ -98,32 +117,34 @@ body {
     transform: translateX(400px);
 
 }
-.card-decoration h1{
+
+.card-decoration h1 {
     font-weight: bolder;
-    font-family:Impact  ;
+    font-family: Impact;
     font-size: 50px;
 }
-.icon-close{
+
+.icon-close {
     position: absolute;
     background-color: rgb(85, 24, 42);
     top: 0;
-    right:0;
+    right: 0;
     height: 40px;
     width: 40px;
     display: flex;
-justify-content: center;  
-  align-items: center;
-  border-bottom-left-radius: 20px;
-  font-size: 30px;
-  color: white;
-  cursor: pointer;
-  }
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
 
 
 .card-decoration input {
     padding-left: 15px;
     padding-right: 15px;
-    color: white ;
+    color: white;
     width: 400px;
     height: 50px;
     border: none;
@@ -142,7 +163,7 @@ justify-content: center;
 
 }
 
-.card-decoration .connexion{
+.card-decoration .connexion {
     font-size: 20px;
     margin-top: 50px;
     width: 80%;
@@ -150,22 +171,26 @@ justify-content: center;
     border-radius: 15px;
     background-color: rgb(13, 116, 110);
     color: gainsboro;
-    border: 2px solid  gainsboro;
+    border: 2px solid gainsboro;
 }
 
-.card-decoration input::-webkit-input-placeholder { 
+.card-decoration input::-webkit-input-placeholder {
     color: wheat;
     line-height: 50px;
 
-  }
+}
 
-::-moz-placeholder { /* Firefox 19+ */
+::-moz-placeholder {
+    /* Firefox 19+ */
     color: wheat;
-  }
-  :-ms-input-placeholder { /* IE 10+ */
-    color: wheat;
-  }
-  :-moz-placeholder { /* Firefox 18- */
-    color: wheat;
-  }
+}
 
+:-ms-input-placeholder {
+    /* IE 10+ */
+    color: wheat;
+}
+
+:-moz-placeholder {
+    /* Firefox 18- */
+    color: wheat;
+}
