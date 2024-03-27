@@ -70,11 +70,8 @@ background-color: blue;
 
 }
 
-
-
-
 .container_child {
-    height: 94%;
+    height:100%;
     justify-content: center;
     display: flex;
     align-items: center;
