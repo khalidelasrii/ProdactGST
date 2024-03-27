@@ -39,8 +39,6 @@ body {
     color: white;
     text-decoration: none;
 
-
-
 }
 .container .navBar button {
     margin:  30px;
@@ -55,11 +53,7 @@ body {
 }
 .container .navBar button:hover {
 background-color: blue;
-
-
 }
-
-
 
 
 .container .navBar a:hover {
