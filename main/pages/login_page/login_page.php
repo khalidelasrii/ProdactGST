@@ -26,6 +26,7 @@ if (isset($_POST['se_connect'])) {
         // $_SESSION['userName'] = $user_data["pass"];
         print("Hello World");
         header("location: ../../index.php");
+        
         exit(); // Assurez-vous de sortir du script après la redirection
     } else {
         $errorMessage = "Email or Password incorrect!";
