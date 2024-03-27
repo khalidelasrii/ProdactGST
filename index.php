@@ -37,7 +37,6 @@
 </nav>
 
 </div>
-    <div class="status"></div>
 
 
 <script src="index.js"></script>
