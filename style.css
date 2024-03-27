@@ -2,3 +2,54 @@
     margin: 0;
     padding: 0; 
 }
+
+body{
+    background-color: black;
+}
+.container .navBar {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    height: 6%;
+    line-height: 80px;
+
+
+}
+
+.container .navBar a {
+    padding-left: 30px;
+
+    font-weight: bolder;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+
+}
+.container .navBar button {
+    margin:  30px;
+    background-color: transparent;
+    padding: 10px 40px;
+    font-weight: bolder;
+    font-size: 20px;
+    color: white;
+    border-radius: 5px;
+    border-color: gainsboro;
+
+}
+.container .navBar button:hover {
+background-color: blue;
+}
+
+
+.container .navBar a:hover {
+    color: blue;
+
+
+}
+
+.container .navBar li {
+    display: inline-flex;
+    padding-left: 30px;
+
+
+}
