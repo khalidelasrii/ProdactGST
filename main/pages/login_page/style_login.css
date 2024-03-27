@@ -7,6 +7,7 @@
 html,
 body {
     height: 100%;
+    background-color: gray;
 }
 
 .myImageBck {
@@ -69,11 +70,8 @@ background-color: blue;
 
 }
 
-
-
-
 .container_child {
-    height: 94%;
+    height:100%;
     justify-content: center;
     display: flex;
     align-items: center;
@@ -86,12 +84,11 @@ background-color: blue;
     border: 2px solid gainsboro;
     margin: 20px;
     padding: 60px;
-
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 400px;
+    width:  600px;
     min-height: 400px;
 
 }
@@ -108,7 +105,7 @@ background-color: blue;
 
     text-align: center;
     position: absolute;
-    transform: translateX(400px);
+    /* transform: translateX(400px); */
 
 }
 
@@ -116,6 +113,7 @@ background-color: blue;
     font-weight: bolder;
     font-family: Impact;
     font-size: 50px;
+    margin-bottom: 50px;
 }
 
 .icon-close {
