@@ -11,32 +11,9 @@
 
 <body>
     
-    <img class="myImageBck" src="../assets/fd.png">
+    <img class="myImageBck" src="../../assets/fd.png">
 
     <div class="container">
-
-        <nav class="navBar">
-
-            <a href="./pages/sign_in_page.html">BrandLOGO</a>
-            <ul>
-                <li>
-                    <a href="">Branding</a>
-                </li>
-                <li>
-                    <a href="">Aculle</a>
-                </li>
-                <li>
-                    <a href="">Community</a>
-                </li>
-                <li>
-                    <a href="">Deversity</a>
-                </li>
-                <li>
-                    <button>Login</button>
-                </li>
-            </ul>
-
-        </nav>
         <div class="container_child">
                 <div class="card-decoration">
                     <span class="icon-close"><ion-icon name="close-outline"></ion-icon></span>
@@ -51,20 +28,15 @@
                         <button onclick="_auth()" class="connexion">Connexion</button>
                     </form>
 
-                    <form class="form-box-register" id="form-box-register" action="">
+                    <!-- <form class="form-box-register" id="form-box-register" action="">
                         <h1>Registration</h1>
                         <input type="email" id="email" name="email" placeholder="exemple@gmail.com">
                         <br><br>
                         <input type="password" id="pass" name="pass" placeholder="*******">
     
                         <button onclick="_auth()" class="connexion">Connexion</button>
-                    </form>
+                    </form> -->
                 </div>
-
-                
-
-        
-
         </div>
     </div>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
