@@ -49,7 +49,7 @@ if (isset($_POST['se_connect'])) {
     <div class="container">
         <div class="container_child">
             <div class="card-decoration">
-                <span class="icon-close"><ion-icon name="close-outline"></ion-icon></span>
+                <a href="../produit_page/produit_page.php"><span class="icon-close"><ion-icon name="close-outline"></ion-icon></span></a>
                 <form class="form-box-login" id="form-box-login" method="POST">
                     <h1>Login</h1>
                     <h6><?php echo $errorMessage ?></h6>
