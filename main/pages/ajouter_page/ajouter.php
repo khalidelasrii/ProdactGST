@@ -1,34 +1,121 @@
 <?php
-// session_start();
-$conx = mysqli_connect("localhost", "root", "", "ofppt");
+// Vérifier si le formulaire a été soumis
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Récupérer les données du formulaire
+    $nom = $_POST['titre'];
+    $prix = $_POST['prix'];
+    $type = $_POST['colors'];
+    $description = $_POST['description'];
 
-if (mysqli_connect_errno()) {
-    die("Connection failed: " . mysqli_connect_error());
-}
+    // Connexion à la base de données 
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "ofppt";
 
-$errorMessage = "";
+    $conn = new mysqli($servername, $username, $password, $dbname);
 
-if (isset($_POST['se_connect'])) {
-    $email = $_POST['email'];
-    $pass = $_POST['pass'];
-
-    $requet = "SELECT * FROM auth WHERE email = ? AND pass = ?";
-    $stmt = mysqli_prepare($conx, $requet);
-    mysqli_stmt_bind_param($stmt, "ss", $email, $pass);
-    mysqli_stmt_execute($stmt);
-    $response = mysqli_stmt_get_result($stmt);
-
-    if ($user_data = mysqli_fetch_array($response)) {
-        // Utilisateur authentifié
-        // Décommentez les lignes ci-dessous pour gérer la session
-        // $_SESSION['userId'] = $user_data["id"];
-        // $_SESSION['userEmail'] = $user_data["email"];
-        // $_SESSION['userName'] = $user_data["pass"];
-        print("Hello World");
-        header("location: ../../index.php");
-        exit(); // Assurez-vous de sortir du script après la redirection
-    } else {
-        $errorMessage = "Email or Password incorrect!";
+    // Vérifier la connexion
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
     }
+
+    // Préparer et exécuter la requête SQL pour insérer le nouveau produit
+    $sql = "INSERT INTO produits (nomA,typeA ,descA,prixA) VALUES ('$nom','$type','$description', '$prix')";
+
+    if ($conn->query($sql) === TRUE) {
+        echo "Le produit a été ajouté avec succès.";
+        echo "<script> hideForm();</script>";
+
+        
+    } else {
+        echo "Erreur: " . $sql . "<br>" . $conn->error;
+    }
+    // Fermer la connexion à la base de données
+    $conn->close();
 }
 ?>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter un Article</title>
+
+</head>
+
+<body>
+
+
+    <h2>Ajouter un Article</h2>
+
+    <!-- Bouton pour afficher le formulaire -->
+    <button onclick="showForm()">Ajouter un Article</button>
+
+    <!-- Fonction pour afficher le formulaire -->
+    <script>
+        function showForm() {
+            // Créer un formulaire HTML
+            var formHtml = `
+            <div id="form-overlay" style=" position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+">
+        <div id="form-container" style="    
+            background-color: #20B2AA;
+            padding: 20px;
+            border-radius: 20px;">
+            <h2 style="text-align: center;">Ajouter un Article</h2>
+            <br>
+            <form  method="POST">
+                <label for="colors">Choisir une Type:</label>
+                <br>
+                <select id="colors" name="colors" style="width:150px">
+                    <option value="red">Rouge</option>
+                    <option value="green">Vert</option>
+                    <option value="blue">Bleu</option>
+                    <option value="yellow">Jaune</option>
+                </select>
+                <br><br>
+                <label for="titre">Titre:</label>
+                <input type="text" id="titre" name="titre" required>
+                <br><br>
+                <label for="prix">Prix:</label>
+
+                <input type="number" name="prix"  id="prix">
+                <br><br>
+                <label for="description">Discription:</label><br>
+                <textarea id="description" name="description" rows="4" cols="50" required></textarea>
+                <br><br>
+                <input type="submit" value="Ajouter">
+                <button onclick="hideForm()">Annuler</button>
+            </form>
+        </div>
+    </div> 
+  `;
+
+            // Ajouter le formulaire au document
+            document.body.insertAdjacentHTML('beforeend', formHtml);
+        }
+
+        // Fonction pour masquer le formulaire
+        function hideForm() {
+            var formOverlay = document.getElementById('form-overlay');
+            formOverlay.parentNode.removeChild(formOverlay);
+        }
+    </script>
+
+</body>
+
+</html>
