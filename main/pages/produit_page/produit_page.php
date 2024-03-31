@@ -84,20 +84,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <button onclick="showForm()">Ajouter un Article</button>
 
             <?php
-
             // SQL query
             $sqlReq = "SELECT * FROM produits";
-
             // Prepare statement
             $sqlPrepar = mysqli_prepare($conn, $sqlReq);
-
             // Execute statement
             mysqli_stmt_execute($sqlPrepar);
-
             //  results
             $result = mysqli_stmt_get_result($sqlPrepar);
-
-
             // Fetch data
             ?>
             <table class="table">
@@ -108,7 +102,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <th scope="col">Type</th>
                         <th scope="col">Description</th>
                         <th scope="col">color</th>
-
+                        <th scope="col">Setting
+                            
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
