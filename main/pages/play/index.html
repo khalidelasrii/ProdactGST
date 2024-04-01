@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 3</title>
+    <style>
+
+        td{
+          text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <table border="1">
+
+        <tr>
+            <td id="1" ><Button onclick="changeValeur('1')">click</Button></td>
+            <td id="2"><Button onclick="changeValeur('2')">click</Button></td>
+            <td id="3"><Button onclick="changeValeur('3')">click</Button></td>
+        
+        
+        </tr>
+        <tr>
+            <td id="4"><Button onclick="changeValeur('4')">click</Button></td>
+            <td id="5"><Button onclick="changeValeur('5')">click</Button></td>
+            <td id="6"><Button onclick="changeValeur('6')">click</Button></td>
+        </tr>
+        <tr>
+            <td id="7"><Button onclick="changeValeur('7')">click</Button></td>
+            <td id="8"><Button onclick="changeValeur('8')">click</Button></td>
+            <td id="9"><Button onclick="changeValeur('9')">click</Button></td>
+        </tr>
+    </table>
+   <script>
+        var xx=false;
+        function changeValeur(idbtn){
+            document.getElementById(idbtn).innerHTML=xx? "X":"O";
+            xx=!xx;
+        }
+    </script>
+
+</body>
+
+</html>
