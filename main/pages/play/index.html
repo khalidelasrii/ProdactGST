@@ -6,40 +6,94 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercice 3</title>
     <style>
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+        }
 
-        td{
-          text-align: center;
+        td {
+            width: 50px;
+            height: 50px;
+            text-align: center;
+        }
+
+        .container {
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
         }
     </style>
 </head>
 
 <body>
-    <table border="1">
+    <div class="container">
 
-        <tr>
-            <td id="1" ><Button onclick="changeValeur('1')">click</Button></td>
-            <td id="2"><Button onclick="changeValeur('2')">click</Button></td>
-            <td id="3"><Button onclick="changeValeur('3')">click</Button></td>
-        
-        
-        </tr>
-        <tr>
-            <td id="4"><Button onclick="changeValeur('4')">click</Button></td>
-            <td id="5"><Button onclick="changeValeur('5')">click</Button></td>
-            <td id="6"><Button onclick="changeValeur('6')">click</Button></td>
-        </tr>
-        <tr>
-            <td id="7"><Button onclick="changeValeur('7')">click</Button></td>
-            <td id="8"><Button onclick="changeValeur('8')">click</Button></td>
-            <td id="9"><Button onclick="changeValeur('9')">click</Button></td>
-        </tr>
-    </table>
-   <script>
-        var xx=false;
-        function changeValeur(idbtn){
-            document.getElementById(idbtn).innerHTML=xx? "X":"O";
-            xx=!xx;
+        <table border="1">
+
+            <tr>
+                <td id="1"><Button onclick="changeValeur('1')">click</Button></td>
+                <td id="2"><Button onclick="changeValeur('2')">click</Button></td>
+                <td id="3"><Button onclick="changeValeur('3')">click</Button></td>
+            </tr>
+            <tr>
+                <td id="4"><Button onclick="changeValeur('4')">click</Button></td>
+                <td id="5"><Button onclick="changeValeur('5')">click</Button></td>
+                <td id="6"><Button onclick="changeValeur('6')">click</Button></td>
+            </tr>
+            <tr>
+                <td id="7"><Button onclick="changeValeur('7')">click</Button></td>
+                <td id="8"><Button onclick="changeValeur('8')">click</Button></td>
+                <td id="9"><Button onclick="changeValeur('9')">click</Button></td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        // var xx=false;
+        // function changeValeur(idbtn){
+        //     document.getElementById(idbtn).innerHTML=xx? "X":"O";
+        //     xx=!xx;
+
+
+        // }
+        var ids = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
+        var premier = [];
+        var second = [];
+
+        function changeValeur(idbtn) {
+            premier.push(idbtn);
+            let indexS = ids.indexOf(idbtn);
+            if (
+                ids.length > 1
+            ) {
+                ids.splice(indexS, 1);
+            }
+
+            console.log(ids);
+
+            document.getElementById(idbtn).innerHTML = "X";
+
+            var index = Math.floor(Math.random() * ids.length);
+            second.push(index);
+
+            document.getElementById(ids[index]).innerHTML = "O";
+            if (ids.length > 1) {
+                ids.splice(index, 1);
+            }
+
+            if (premier.length > 2) {
+                for (var i = 0; i < premier.length; i++) {
+                    if (!["1", "2", "3"].includes(premier[i])) {
+                        console.log("Toutes les valeurs sont présentes dans la liste.");
+                        break;
+                    }
+                }
+            }
+
         }
+
     </script>
 
 </body>
