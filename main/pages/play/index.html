@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,46 +24,45 @@
             align-items: center;
             height: 100%;
         }
-        table{
+
+        table {
 
             margin: 60px;
         }
-       
     </style>
 </head>
+
 <body>
     <div class="container">
- 
 
-            <div id="child">
-                <h1 id="winer" style="text-align: center;"></h1>
-                <table border="1">
-                    <tr>
-                        <td id="1"><button onclick="changeValeur('1')">click</button></td>
-                        <td id="2"><button onclick="changeValeur('2')">click</button></td>
-                        <td id="3"><button onclick="changeValeur('3')">click</button></td>
-                    </tr>
-                    <tr>
-                        <td id="4"><button onclick="changeValeur('4')">click</button></td>
-                        <td id="5"><button onclick="changeValeur('5')">click</button></td>
-                        <td id="6"><button onclick="changeValeur('6')">click</button></td>
-                    </tr>
-                    <tr>
-                        <td id="7"><button onclick="changeValeur('7')">click</button></td>
-                        <td id="8"><button onclick="changeValeur('8')">click</button></td>
-                        <td id="9"><button onclick="changeValeur('9')">click</button></td>
-                    </tr>
-                </table>
-            </div>
+
+        <div id="child">
+            <h1 id="winer" style="text-align: center;"></h1>
+            <table border="1">
+                <tr>
+                    <td id="1"><button onclick="changeValeur('1')">click</button></td>
+                    <td id="2"><button onclick="changeValeur('2')">click</button></td>
+                    <td id="3"><button onclick="changeValeur('3')">click</button></td>
+                </tr>
+                <tr>
+                    <td id="4"><button onclick="changeValeur('4')">click</button></td>
+                    <td id="5"><button onclick="changeValeur('5')">click</button></td>
+                    <td id="6"><button onclick="changeValeur('6')">click</button></td>
+                </tr>
+                <tr>
+                    <td id="7"><button onclick="changeValeur('7')">click</button></td>
+                    <td id="8"><button onclick="changeValeur('8')">click</button></td>
+                    <td id="9"><button onclick="changeValeur('9')">click</button></td>
+                </tr>
+            </table>
+        </div>
     </div>
     <script>
         var ids = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
         var frstPl = [];
         var secndPl = [];
-        var ferstPlayer=false;
-        var secondPlayer=false;
-
-
+        var ferstPlayer = false;
+        var secondPlayer = false;
         function changeValeur(idbtn) {
             frstPl.push(idbtn);
             document.getElementById(idbtn).innerHTML = "X";
@@ -70,16 +70,7 @@
             if (ids.length > 0) {
                 ids.splice(indexS, 1);
             }
-
             var index = Math.floor(Math.random() * ids.length);
-<<<<<<< HEAD
-            console.log(index);
-            if(ids[index]!=null){
-                document.getElementById(ids[index]).innerHTML = "O";
-            } 
-=======
-            if(ids[index]!=null){document.getElementById(ids[index]).innerHTML = "O";} 
->>>>>>> a5d0cad0003535980fdb6ca7bcbf3d07026b01be
             secndPl.push(ids[index]);
             if (ids.length > 0) {
                 ids.splice(index, 1);
@@ -91,7 +82,7 @@
                 ["1", "5", "9"], ["3", "5", "7"]
             ];
 
-            if ((secndPl.length > 2 || frstPl.length > 2 )) {
+            if ((secndPl.length > 2 || frstPl.length > 2)) {
                 for (let i = 0; i < listeSolution.length; i++) {
                     let toutesPresentes = listeSolution[i].every(function (valeur) {
                         return secndPl.includes(valeur);
@@ -99,13 +90,8 @@
                     if (toutesPresentes) {
                         for (let j = 0; j < listeSolution[i].length; j++) {
                             document.getElementById(listeSolution[i][j]).style.backgroundColor = "red";
-                            secondPlayer=true;
+                            secondPlayer = true;
                         }
-<<<<<<< HEAD
-=======
-                    }else{
-                        console.log("eeeeeeeeeeeee")
->>>>>>> a5d0cad0003535980fdb6ca7bcbf3d07026b01be
                     }
                 }
 
@@ -116,30 +102,29 @@
                     if (toutesPresentes) {
                         for (let j = 0; j < listeSolution[i].length; j++) {
                             document.getElementById(listeSolution[i][j]).style.backgroundColor = "green";
-                            ferstPlayer=true;
+                            ferstPlayer = true;
                         }
                     }
                 }
-                if(ferstPlayer==true){
+                if (ferstPlayer == true) {
                     console.log("Ferst player win");
-                    document.getElementById("child").style.border="20px solid green";
-                    document.getElementById("winer").innerHTML="You Are Win";
-                    
-                }
-                
-                
-                if(secondPlayer==true){
-                    document.getElementById("child").style.border="20px solid red";
-                    document.getElementById("winer").innerHTML="You Are Lose";
+                    document.getElementById("child").style.border = "20px solid green";
+                    document.getElementById("winer").innerHTML = "You Are Win";
 
                 }
 
-           
-            }else{
+
+                if (secondPlayer == true) {
+                    document.getElementById("child").style.border = "20px solid red";
+                    document.getElementById("winer").innerHTML = "You Are Lose";
+
+                }
+            } else {
                 console.log(`Second player : ${secondPlayer}`);
                 console.log(`Ferst player : ${ferstPlayer}`);
             }
         }
     </script>
 </body>
+
 </html>
