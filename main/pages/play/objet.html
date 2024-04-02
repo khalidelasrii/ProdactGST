@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body onload="RemlirTableau()">
+    <table border="1" id="table">
+        <tr>
+            <th>ISBN</th>
+            <th>Titre</th>
+            <th>Nom Autteur</th>
+        </tr>
+
+
+    </table>
+</body>
+<script>
+    var obj = [
+        { "isbm": "1102", "Titre": "Livre1", "nomAutteur": "khalid ibrahim" },
+        { "isbm": "1104", "Titre": "Livre2", "nomAutteur": "ahmad mohssin" },
+        { "isbm": "1107", "Titre": "Livre3", "nomAutteur": "rifaata ismaim" },
+        { "isbm": "1101", "Titre": "Livre4", "nomAutteur": "khalid ibrahim" },
+        { "isbm": "1106", "Titre": "Livre5", "nomAutteur": "ayman salmi" },
+        { "isbm": "1108", "Titre": "Livre6", "nomAutteur": "mehdi marzok" },
+        { "isbm": "1109", "Titre": "Livre7", "nomAutteur": "mouad skhone" },
+    ]
+    function RemlirTableau() {
+        var table = document.getElementById("table");
+        for (let i = 0; i <= obj.length; i++) {
+            let file =`<tr><td>${obj[i]["isbm"]}</td><td>${obj[i]["Titre"]}</td><td>${obj[i]["nomAutteur"]}</td></tr>`;
+            table.insertAdjacentHTML("beforeend", file);
+        }
+    }
+</script>
+
+</html>

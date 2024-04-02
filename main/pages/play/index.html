@@ -59,7 +59,7 @@
             }
 
             var index = Math.floor(Math.random() * ids.length);
-            document.getElementById(ids[index]).innerHTML = "O";
+            if(ids[index]!=null){document.getElementById(ids[index]).innerHTML = "O";} 
             secndPl.push(ids[index]);
             if (ids.length > 1) {
                 ids.splice(index, 1);
