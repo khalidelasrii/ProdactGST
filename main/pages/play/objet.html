@@ -8,18 +8,21 @@
 
 </head>
 
-<body onload="RemlirTableau()">
+<body >
+    <input id="search" type="text">
     <table border="1" id="table">
         <tr>
             <th>ISBN</th>
             <th>Titre</th>
             <th>Nom Autteur</th>
         </tr>
-
-
     </table>
+
+    <button onclick="addNewLine('Bilal')">Ajouter</button>
 </body>
 <script>
+            var table = document.getElementById("table");
+
     var obj = [
         { "isbm": "1102", "Titre": "Livre1", "nomAutteur": "khalid ibrahim" },
         { "isbm": "1104", "Titre": "Livre2", "nomAutteur": "ahmad mohssin" },
@@ -29,8 +32,14 @@
         { "isbm": "1108", "Titre": "Livre6", "nomAutteur": "mehdi marzok" },
         { "isbm": "1109", "Titre": "Livre7", "nomAutteur": "mouad skhone" },
     ]
+
+    function addNewLine(value){       
+           table.insertAdjacentHTML("beforeend", `<tr><td>${value}</td><td>${value}</td><td>${value}</td></tr>`);
+
+
+
+    }
     function RemlirTableau() {
-        var table = document.getElementById("table");
         for (let i = 0; i <= obj.length; i++) {
             let file =`<tr><td>${obj[i]["isbm"]}</td><td>${obj[i]["Titre"]}</td><td>${obj[i]["nomAutteur"]}</td></tr>`;
             table.insertAdjacentHTML("beforeend", file);
