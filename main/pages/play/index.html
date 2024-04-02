@@ -72,10 +72,14 @@
             }
 
             var index = Math.floor(Math.random() * ids.length);
+<<<<<<< HEAD
             console.log(index);
             if(ids[index]!=null){
                 document.getElementById(ids[index]).innerHTML = "O";
             } 
+=======
+            if(ids[index]!=null){document.getElementById(ids[index]).innerHTML = "O";} 
+>>>>>>> a5d0cad0003535980fdb6ca7bcbf3d07026b01be
             secndPl.push(ids[index]);
             if (ids.length > 0) {
                 ids.splice(index, 1);
@@ -97,6 +101,11 @@
                             document.getElementById(listeSolution[i][j]).style.backgroundColor = "red";
                             secondPlayer=true;
                         }
+<<<<<<< HEAD
+=======
+                    }else{
+                        console.log("eeeeeeeeeeeee")
+>>>>>>> a5d0cad0003535980fdb6ca7bcbf3d07026b01be
                     }
                 }
 
