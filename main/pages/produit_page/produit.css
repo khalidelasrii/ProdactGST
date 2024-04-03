@@ -2,13 +2,7 @@
     margin: 0;
     padding: 0;
 }
-.bodyArticle{
 
-    background-color: rgb(8, 47, 82);
-    width: 100%;
-    height: 800px;
-
-}
 
 
 
@@ -36,21 +30,6 @@
     color: rgb(8, 47, 82);
 
 }
-.container .navBar button {
-    background-color: transparent;
-    padding: 5px 30px;
-    font-weight: bolder;
-    font-size: 20px;
-    border-radius: 5px;
-    border-color: rgb(4, 112, 22);
-
-}
-.container .navBar button:hover {
-background-color: rgb(4, 112, 22);
-}
-
-
-
 
 .container .navBar li {
     display: inline-flex;
@@ -58,3 +37,8 @@ background-color: rgb(4, 112, 22);
 
 
 }
+.newArticle{
+
+margin: 50px;
+}
+
