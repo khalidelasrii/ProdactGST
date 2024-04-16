@@ -5,69 +5,17 @@
 }
 
 html,
-body {
+body {    
     height: 100%;
-    background-color: gray;
-}
-
-.myImageBck {
-    height: 100%;
-    width: 100%;
-    position: absolute;
 }
 
 .container {
-    position: absolute;
+    background-image: linear-gradient(to bottom right, blue, grey);
+
+    max-width: 3000px;
+    max-height: 3000px;
     width: 100%;
     height: 100%;
-}
-
-.container .navBar {
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-    height: 6%;
-    line-height: 80px;
-
-
-}
-
-.container .navBar a {
-    padding-left: 30px;
-
-    font-weight: bolder;
-    font-size: 20px;
-    color: white;
-    text-decoration: none;
-
-}
-.container .navBar button {
-    margin:  30px;
-    background-color: transparent;
-    padding: 10px 40px;
-    font-weight: bolder;
-    font-size: 20px;
-    color: white;
-    border-radius: 5px;
-    border-color: gainsboro;
-
-}
-.container .navBar button:hover {
-background-color: blue;
-}
-
-
-.container .navBar a:hover {
-    color: blue;
-
-
-}
-
-.container .navBar li {
-    display: inline-flex;
-    padding-left: 30px;
-
-
 }
 
 .container_child {
@@ -80,7 +28,7 @@ background-color: blue;
 .card-decoration {
     backdrop-filter: blur(10px);
     border-radius: 20px;
-    background-color: transparent;
+    background-color: rgba(60, 60, 68, 0.562);
     border: 2px solid gainsboro;
     margin: 20px;
     padding: 60px;

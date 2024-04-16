@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,55 +24,78 @@
             align-items: center;
             height: 100%;
         }
+
+        table {
+
+            margin: 60px;
+        }
     </style>
 </head>
+
 <body>
     <div class="container">
-        <table border="1">
-            <tr>
-                <td id="1"><button onclick="changeValeur('1')">click</button></td>
-                <td id="2"><button onclick="changeValeur('2')">click</button></td>
-                <td id="3"><button onclick="changeValeur('3')">click</button></td>
-            </tr>
-            <tr>
-                <td id="4"><button onclick="changeValeur('4')">click</button></td>
-                <td id="5"><button onclick="changeValeur('5')">click</button></td>
-                <td id="6"><button onclick="changeValeur('6')">click</button></td>
-            </tr>
-            <tr>
-                <td id="7"><button onclick="changeValeur('7')">click</button></td>
-                <td id="8"><button onclick="changeValeur('8')">click</button></td>
-                <td id="9"><button onclick="changeValeur('9')">click</button></td>
-            </tr>
-        </table>
+
+
+        <div id="child">
+            <h1 id="winer" style="text-align: center;"></h1>
+            <table border="1">
+                <tr>
+                    <td id="1"><button onclick="playTorn('1')">click</button></td>
+                    <td id="2"><button onclick="playTorn('2')">click</button></td>
+                    <td id="3"><button onclick="playTorn('3')">click</button></td>
+                </tr>
+                <tr>
+                    <td id="4"><button onclick="playTorn('4')">click</button></td>
+                    <td id="5"><button onclick="playTorn('5')">click</button></td>
+                    <td id="6"><button onclick="playTorn('6')">click</button></td>
+                </tr>
+                <tr>
+                    <td id="7"><button onclick="playTorn('7')">click</button></td>
+                    <td id="8"><button onclick="playTorn('8')">click</button></td>
+                    <td id="9"><button onclick="playTorn('9')">click</button></td>
+                </tr>
+            </table>
+        </div>
     </div>
     <script>
+        let listeSolution = [
+            ["1", "2", "3"], ["4", "5", "6"], ["7", "8", "9"],
+            ["1", "4", "7"], ["2", "5", "8"], ["3", "6", "9"],
+            ["1", "5", "9"], ["3", "5", "7"]
+        ];
         var ids = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
         var frstPl = [];
         var secndPl = [];
+        var ferstPlayer = false;
+        var secondPlayer = false;
+        var count =0;
 
-        function changeValeur(idbtn) {
+
+        function playTorn(idbtn) {
+            count+=1;
+           
+            // -----------------------------------------------
+            // ferst player chose id and remove this id from list of ids
             frstPl.push(idbtn);
             document.getElementById(idbtn).innerHTML = "X";
             var indexS = ids.indexOf(idbtn);
-            if (ids.length > 1) {
+            if (ids.length > 0) {
                 ids.splice(indexS, 1);
             }
+            // second player chose  anoder id and remove this id  from the liste of ids 
 
             var index = Math.floor(Math.random() * ids.length);
-            if(ids[index]!=null){document.getElementById(ids[index]).innerHTML = "O";} 
             secndPl.push(ids[index]);
-            if (ids.length > 1) {
-                ids.splice(index, 1);
+            ids[index]!=null? document.getElementById(ids[index]).innerHTML = "O":null;
+
+            let indexx = ids.indexOf(ids[index]);
+
+            if (ids.length > 0) {
+                ids.splice(indexx, 1);
             }
+            // -----------------------------------------------
 
-            let listeSolution = [
-                ["1", "2", "3"], ["4", "5", "6"], ["7", "8", "9"],
-                ["1", "4", "7"], ["2", "5", "8"], ["3", "6", "9"],
-                ["1", "5", "9"], ["3", "5", "7"]
-            ];
-
-            if (secndPl.length > 2 || frstPl.length > 2) {
+            if(!ferstPlayer){
                 for (let i = 0; i < listeSolution.length; i++) {
                     let toutesPresentes = listeSolution[i].every(function (valeur) {
                         return secndPl.includes(valeur);
@@ -79,11 +103,19 @@
                     if (toutesPresentes) {
                         for (let j = 0; j < listeSolution[i].length; j++) {
                             document.getElementById(listeSolution[i][j]).style.backgroundColor = "red";
+                            secondPlayer = true;
                         }
-                    }else{
-                        console.log("eeeeeeeeeeeee")
                     }
                 }
+
+                if (secondPlayer == true) {
+                    document.getElementById("child").style.border = "20px solid red";
+                    document.getElementById("winer").innerHTML = "You Are Lose";
+
+                }
+            }
+            if (!secondPlayer ) {
+               
 
                 for (let i = 0; i < listeSolution.length; i++) {
                     let toutesPresentes = listeSolution[i].every(function (valeur) {
@@ -92,13 +124,28 @@
                     if (toutesPresentes) {
                         for (let j = 0; j < listeSolution[i].length; j++) {
                             document.getElementById(listeSolution[i][j]).style.backgroundColor = "green";
+                            ferstPlayer = true;
                         }
-                    }else{
-                        console.log("bbbbbbbbbbbbbbbbbbbbb")
                     }
                 }
+                if (ferstPlayer == true) {
+                    console.log("Ferst player win");
+                    document.getElementById("child").style.border = "20px solid green";
+                    document.getElementById("winer").innerHTML = "You Are Win";
+
+                }
+
+            
+             
+            } 
+
+            if((count == 5 && ferstPlayer==false && secondPlayer==false) ){
+                document.body.insertAdjacentHTML("afterbegin",`<h1 style="color:red; text-align:center">التعادل ا وليدي</h1>`)
             }
+
+console.log(count);
         }
     </script>
 </body>
+
 </html>

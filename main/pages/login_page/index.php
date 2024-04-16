@@ -1,6 +1,6 @@
 <?php
 // session_start();
-$conx = mysqli_connect("localhost", "root", "", "ofppt");
+$conx = mysqli_connect("localhost", "root","", "ofppt");
 
 if (mysqli_connect_errno()) {
     die("Connection failed: " . mysqli_connect_error());
@@ -12,7 +12,7 @@ if (isset($_POST['se_connect'])) {
     $email = $_POST['email'];
     $pass = $_POST['pass'];
 
-    $requet = "SELECT * FROM auth WHERE email = ? AND pass = ?";
+    $requet = "SELECT * FROM auth WHERE email like '$email' and pass = '$pass'";
     $stmt = mysqli_prepare($conx, $requet);
     mysqli_stmt_bind_param($stmt, "ss", $email, $pass);
     mysqli_stmt_execute($stmt);
@@ -26,7 +26,6 @@ if (isset($_POST['se_connect'])) {
         // $_SESSION['userName'] = $user_data["pass"];
         print("Hello World");
         header("location: ../../index.php");
-        
         exit(); // Assurez-vous de sortir du script après la redirection
     } else {
         $errorMessage = "Email or Password incorrect!";
@@ -41,11 +40,12 @@ if (isset($_POST['se_connect'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="./style_login.css">
+    <link rel="stylesheet" href="./style.css">
+    
 </head>
 
-<body>
-    <img class="myImageBck" src="../../../assets/fd.png">
+<body >
+   
     <div class="container">
         <div class="container_child">
             <div class="card-decoration">
@@ -63,7 +63,6 @@ if (isset($_POST['se_connect'])) {
     </div>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script src="./login.js"></script>
 </body>
 
 </html>
